@@ -1,6 +1,8 @@
 package fr.epf.demoseptembre.controllers;
 
+import fr.epf.demoseptembre.models.Offer;
 import fr.epf.demoseptembre.models.User;
+import fr.epf.demoseptembre.persistence.OfferDao;
 import fr.epf.demoseptembre.persistence.UserDao;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,9 +18,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class UsersController {
 
     private final UserDao userDao;
+    private final OfferDao offerDao;
 
-    public UsersController(UserDao userDao) {
-        this.userDao = userDao;
+    public UsersController(UserDao userDao, OfferDao offerDao) {
+        this.userDao = userDao; this.offerDao = offerDao;
     }
 
     /**
@@ -50,14 +53,14 @@ public class UsersController {
     }
 
     @GetMapping("/addoffer")
-    public String addOfferForm(Model model) {
+    public String addOfferForm(Offer offer ,Model model) {
         model.addAttribute("offer", new Offer());
         return "add_offer";
     }
 
     @PostMapping("/offer")
-    public String addUser(Offer offer, Model model) {
-        userDao.save(offer);
+    public String addOffer(Offer offer, Model model) {
+        offerDao.save(offer);
         return "redirect:/offers";
     }
 }
