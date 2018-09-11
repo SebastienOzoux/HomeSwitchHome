@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:td="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="../css/style.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css">
+</head>
+<body>
+<table>
+  
+  <tr>
+    <th>
+      id
+    </th>
+    <th>firstName</th>
+    <th>lastName</th>
+  </tr>
+  <tr th:each="user : ${data}">
+    <td th:text="${user.id}"></td>
+    <td th:text="${user.firstName}"></td>
+    <td th:text="${user.lastName}"></td>
+  </tr>
+  <div>
+    <form method="get" action="/user">
+      <button type="submit" class="btn btn-lg btn-primary">Ajouter utilisateur</button>
+    </form>
+
+  </div>
+
+</table>
+
+<!-- jQuery -->
+<script src="../js/jquery-3.1.1.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../js/bootstrap.min.js"></script>
+
+</body>
+</html>
