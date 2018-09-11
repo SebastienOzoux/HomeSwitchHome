@@ -1,10 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Informations</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <!-- Inclure le header/footer -->
+    <script src="jquery.js"></script>
+    <script>
+    $(function(){
+      $("#Header").load("header.html");
+      $("#Footer").load("footer.html");
+    });
+    </script>
 </head>
+
 <body>
-$END$
+
+<header>
+    <div id="Header"></div>
+</header>
+
+
+<center>
+<div class="container-fluid well span6">
+    <div class="row-fluid">
+        <div class="span2" >
+            <img src="https://secure.gravatar.com/avatar/de9b11d0f9c0569ba917393ed5e5b3ab?s=140&r=g&d=mm" class="img-circle">
+        </div>
+
+        <div class="span8">
+            <h3>User Name</h3>
+            <h6>Email: MyEmail@servidor.com</h6>
+            <h6>Ubication: Colombia</h6>
+            <h6>Old: 1 Year</h6>
+        </div>
+    </div>
+</div>
+</center>
+
+<br><br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-offset-5 col-xs-offset-3">
+            <div class="rating-block">
+                <h4>Average user rating</h4>
+                <h2 class="bold padding-bottom-7">4.3 <small>/ 5</small></h2>
+                <button type="button" class="btn btn-warning btn-sm">
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-warning btn-sm">
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-warning btn-sm">
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-default btn-grey btn-sm">
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-default btn-grey btn-sm">
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div> <!-- /container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="js/ie10-viewport-bug-workaround.js"></script>
+
+<footer>
+    <div id="Footer"></div>
+</footer>
+
 </body>
 </html>
