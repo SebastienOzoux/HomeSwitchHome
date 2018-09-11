@@ -49,6 +49,15 @@ public class UsersController {
         return "redirect:/users";
     }
 
+    @GetMapping("/addoffer")
+    public String addOfferForm(Model model) {
+        model.addAttribute("offer", new Offer());
+        return "add_offer";
+    }
 
-
+    @PostMapping("/offer")
+    public String addUser(Offer offer, Model model) {
+        userDao.save(offer);
+        return "redirect:/offers";
+    }
 }
