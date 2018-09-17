@@ -40,7 +40,7 @@ public class UsersController {
         return "users-list";
     }
 
-    @GetMapping("/user")
+    @GetMapping("/adduser")
     public String addUserForm(Model model) {
         model.addAttribute("user", new User());
         return "add_member";
@@ -69,4 +69,10 @@ public class UsersController {
         model.addAttribute("data", userDao.findAll());
         return "announce-list";
     }
+
+    @GetMapping("/user")
+    public String getUser(Model model){
+        return "user_info";
+    }
+
 }
