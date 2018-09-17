@@ -37,9 +37,5 @@ public class DemoSeptembreApplication {
    */
   @PostConstruct
   public void init() {
-    userDao.save(new User(null,"Loic", "Ortola"));
-    userDao.save(new User(null, "Ambroise", "Soullier"));
-    userDao.save(new User(null, "Harry", "Covert"));
-    offerDao.save(new Offer(null, "Titre1","location1",100,10));
   }
 }
