@@ -76,4 +76,9 @@ public class UsersController {
         return "test";  
     }
 
+    @GetMapping("/user")
+    public String getUser(Model model){
+        return "user_info";
+    }
+
 }
