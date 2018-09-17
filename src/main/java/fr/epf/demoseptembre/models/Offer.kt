@@ -11,6 +11,6 @@ import javax.persistence.Id
  * @author Loïc Ortola on 10/09/2018
  */
 @Entity
-data class Offer(@Id @GeneratedValue var id: Int? =  null, var title: String? = null, var location: String?= null, var surface: Int?= null, var beds: String?= null) {
+data class Offer(@Id @GeneratedValue var id: Int? =  null, var title: String? = null, var location: String?= null, var surface: Int?= null, var beds: Int? = null) {
 
 }
