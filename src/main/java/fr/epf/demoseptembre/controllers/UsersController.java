@@ -6,8 +6,7 @@ import fr.epf.demoseptembre.persistence.OfferDao;
 import fr.epf.demoseptembre.persistence.UserDao;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * TODO class details.
@@ -81,4 +80,13 @@ public class UsersController {
         return "user_info";
     }
 
+    @RequestMapping(value = "offers/{id}", method = RequestMethod.POST)
+    public String delete(@PathVariable("id") int itemId, Model model) {
+
+        Offer offer = offerDao.findById(Integer.valueOf(itemId)).get();
+        offerDao.delete(offer);
+
+        return "redirect:/offers";
+
+    }
 }
