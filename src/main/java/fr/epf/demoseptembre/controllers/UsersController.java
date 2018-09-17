@@ -53,7 +53,7 @@ public class UsersController {
     }
 
     @GetMapping("/addoffer")
-    public String addOfferForm(Offer offer ,Model model) {
+    public String addOfferForm(Model model) {
         model.addAttribute("offer", new Offer());
         return "add_offer";
     }
@@ -62,5 +62,11 @@ public class UsersController {
     public String addOffer(Offer offer, Model model) {
         offerDao.save(offer);
         return "redirect:/offers";
+    }
+
+    @GetMapping("/offers")
+    public String getOffers(Model model) {
+        model.addAttribute("data", userDao.findAll());
+        return "announce-list";
     }
 }

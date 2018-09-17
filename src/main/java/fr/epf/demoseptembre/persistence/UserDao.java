@@ -3,6 +3,7 @@ package fr.epf.demoseptembre.persistence;
 import fr.epf.demoseptembre.models.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.ui.Model;
 
 /**
  * TODO class details.
@@ -11,5 +12,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface UserDao extends CrudRepository<User, Integer> {
-  
+
 }
