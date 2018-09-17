@@ -1,7 +1,9 @@
 package fr.epf.demoseptembre;
 
 import fr.epf.demoseptembre.models.User;
+import fr.epf.demoseptembre.models.Offer;
 import fr.epf.demoseptembre.persistence.UserDao;
+import fr.epf.demoseptembre.persistence.OfferDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,7 +17,11 @@ public class DemoSeptembreApplication {
   
   @Autowired
   private UserDao userDao;
-  
+  @Autowired
+  private OfferDao offerDao;
+
+
+
   public static void main(String[] args) {
     // Point d'entrée de l'application.
     // On dit à Spring de s'initialiser
@@ -34,5 +40,6 @@ public class DemoSeptembreApplication {
     userDao.save(new User(null,"Loic", "Ortola"));
     userDao.save(new User(null, "Ambroise", "Soullier"));
     userDao.save(new User(null, "Harry", "Covert"));
+    offerDao.save(new Offer(null, "Titre1","location1",100,10));
   }
 }

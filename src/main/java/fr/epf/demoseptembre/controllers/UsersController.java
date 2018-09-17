@@ -66,7 +66,7 @@ public class UsersController {
 
     @GetMapping("/offers")
     public String getOffers(Model model) {
-        model.addAttribute("data", userDao.findAll());
+        model.addAttribute("data", offerDao.findAll());
         return "announce-list";
     }
 
