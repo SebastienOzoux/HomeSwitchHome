@@ -1,10 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:td="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../css/style.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          type="text/css">
 </head>
 <body>
+<table>
+
+
+    <tr th:each="offer : ${data}">
+        <div class="item col-xs-4 col-lg-4">
+            <div class="thumbnail card">
+                <!--<div class="img-event">
+                    <img class="group list-group-image img-fluid" src="http://placehold.it/400x250/000/fff" alt="" />
+                </div>-->
+                <div class="caption card-body">
+                    <h4 class="group card-title inner list-group-item-heading" th:text="${offer.title}">
+                    </h4>
+                    <p   th:text= "${offer.beds}">
+                         lits</p>
+                    <p   th:text= "${offer.surface}">
+                        lits</p>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <p  class="lead" th:text="${offer.location}"> </p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <a class="btn btn-success" href="">Description</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <td Id : ></td>
+        <td ></td>
+        <td ></td>
+    </tr>
+
+
+
+
+
+
+
+
+
+</table>
+
+<!-- jQuery -->
+<script src="../js/jquery-3.1.1.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../js/bootstrap.min.js"></script>
 
 </body>
 </html>
