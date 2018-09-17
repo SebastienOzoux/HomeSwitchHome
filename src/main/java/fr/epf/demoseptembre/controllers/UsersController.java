@@ -73,7 +73,7 @@ public class UsersController {
     @GetMapping("/test")
     public String gettest(Model model) {
         model.addAttribute("data", userDao.findAll());
-        return "test";
+        return "test";  
     }
 
 }
