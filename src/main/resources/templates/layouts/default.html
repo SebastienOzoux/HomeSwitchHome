@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="fragments/title :: head">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../../css/stylo.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          type="text/css">
+</head>
+<body>
+<div class="container">
+    <div th:replace="fragments/header :: header" ></div>
+    <div layout:fragment="content">
+
+    </div>
+    <!--<div th:replace="fragments/footer :: footer"></div>-->
+</div>
+</body>
+</html>
