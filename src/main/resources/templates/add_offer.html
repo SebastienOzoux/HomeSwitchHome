@@ -34,7 +34,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-xs-12">
-                            <form action="#" th:action="@{/offer}" th:object="${offer}" method="post" id="addOfferForm">
+                            <form action="#" th:action="@{/offer}" th:object="${offer}" method="post" id="addOfferForm" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="title">Titre</label>
                                     <input type="text" class="input-lg form-control" id="title"
@@ -55,9 +55,15 @@
                                     <input type="number" id="beds" class="input-lg form-control"
                                            th:field="*{beds}">
                                 </div>
-                                <div class="text-right">
+                                <div class="form-group">
+                                 <td>Choisissez une photo</td>
+                                    <td><input type="file" id="photo" name="photo" size="50" th:fields="*{photo}" accept="image/*"/></td>
+                                 </div>
+
+                                 <div class="text-right">
                                     <button type="submit" class="btn btn-lg btn-primary">Enregistrer</button>
                                 </div>
+
                             </form>
                         </div>
                     </div>

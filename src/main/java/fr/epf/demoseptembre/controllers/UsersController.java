@@ -2,11 +2,18 @@ package fr.epf.demoseptembre.controllers;
 
 import fr.epf.demoseptembre.models.Offer;
 import fr.epf.demoseptembre.models.User;
+import fr.epf.demoseptembre.models.dto.OfferForm;
 import fr.epf.demoseptembre.persistence.OfferDao;
 import fr.epf.demoseptembre.persistence.UserDao;
+import org.apache.commons.io.FileUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Base64;
 
 /**
  * TODO class details.
@@ -58,14 +65,23 @@ public class UsersController {
     }
 
     @PostMapping("/offer")
-    public String addOffer(Offer offer, Model model) {
+    public String addOffer(@RequestParam("photo") MultipartFile mpfile, OfferForm offerform, Model model) {
+        Offer offer = new Offer();
+        offer.setTitle(offerform.getTitle());
+        offer.setLocation(offerform.getLocation());
+        offer.setSurface(offerform.getSurface());
+        offer.setBeds(offerform.getBeds());
+        offer.setPhoto(offerform.encoder(mpfile));
         offerDao.save(offer);
+
         return "redirect:/offers";
     }
 
     @GetMapping("/offers")
     public String getOffers(Model model) {
         model.addAttribute("data", offerDao.findAll());
+
+
         return "announce-list";
     }
 
