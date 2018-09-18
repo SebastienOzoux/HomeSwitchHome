@@ -27,6 +27,7 @@
                 <div class="caption card-body">
                     <h2 class="group card-title inner list-group-item-heading" th:text="${offer.title}">
                     </h2>
+                    <img th:src="'data:image/png;base64, '+${offer.photo}" />
                     <p> Nombre de couchages: <span th:text= "${offer.beds}"></span></p>
                     <p> Taille: <span th:text= "${offer.surface}"></span>m²</p>
                     <div class="row">
