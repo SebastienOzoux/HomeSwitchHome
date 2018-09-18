@@ -81,12 +81,17 @@ public class UsersController {
     }
 
     @RequestMapping(value = "offers/{id}", method = RequestMethod.POST)
-    public String delete(@RequestParam("id") int itemId, Model model) {
-
+    public String delete(@PathVariable("id") int itemId, Model model) {
         Offer offer = offerDao.findById(itemId).get();
         offerDao.delete(offer);
-
         return "redirect:/offers";
-
     }
+
+    @RequestMapping(value = "offer/{id}", method = RequestMethod.GET)
+    public String show(@PathVariable("id") int itemId, Model model) {
+        Offer offer = offerDao.findById(itemId).get();
+        model.addAttribute("offer",offer);
+        return "offer";
+    }
+
 }
