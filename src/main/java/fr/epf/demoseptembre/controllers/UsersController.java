@@ -81,9 +81,9 @@ public class UsersController {
     }
 
     @RequestMapping(value = "offers/{id}", method = RequestMethod.POST)
-    public String delete(@PathVariable("id") int itemId, Model model) {
+    public String delete(@RequestParam("id") int itemId, Model model) {
 
-        Offer offer = offerDao.findById(Integer.valueOf(itemId)).get();
+        Offer offer = offerDao.findById(itemId).get();
         offerDao.delete(offer);
 
         return "redirect:/offers";

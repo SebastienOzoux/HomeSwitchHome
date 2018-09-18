@@ -35,9 +35,8 @@
                         </div>
                         <div class="col-xs-12 col-md-6">
                             <a class="btn btn-success">Description</a>
-                            <form th:action="@{/offers/${offer.id}}" th:object="${offer}" method="post">
+                            <form th:action="@{/offers/details(id=${offer.id})}" th:object="${offer}" method="post">
                                 <button type="submit" class="btn btn-danger">Supprimer</button>
-                                <span th:text="${offer.id}"></span>
                             </form>
                         </div>
                     </div>
