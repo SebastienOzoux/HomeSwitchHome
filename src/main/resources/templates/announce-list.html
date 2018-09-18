@@ -34,7 +34,7 @@
                             <p  class="lead" th:text="${offer.location}"> </p>
                         </div>
                         <div class="col-xs-12 col-md-6">
-                            <form th:action="@{'/offer/'+${offer.id}}" th:object="${offer}" method="get">
+                            <form th:action="@{'/offers/'+${offer.id}}" th:object="${offer}" method="get">
                                 <button type="submit" class="btn btn-success col-md-6">Description</button>
                             </form>
                             <form th:action="@{'/offers/'+${offer.id}}" th:object="${offer}" method="post">
