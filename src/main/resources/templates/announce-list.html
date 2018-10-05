@@ -9,61 +9,79 @@
     <!-- Bootstrap CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 
+
     <!-- Custom CSS -->
     <link href="../css/style.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
           type="text/css">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="../css/clean-blog.min.css" rel="stylesheet">
+
 </head>
 <body>
 <div style="margin-top:50px; display:block" id="page" layout:fragment="content">
-<table>
-
-
-    <tr th:each="offer : ${data}">
-        <div class="item col-xs-4 col-lg-4">
-            <div class="thumbnail card">
-                <!--<div class="img-event">
-                    <img class="group list-group-image img-fluid" src="http://placehold.it/400x250/000/fff" alt="" />
-                </div>-->
-                <div class="caption card-body">
-                    <h2 class="group card-title inner list-group-item-heading" th:text="${offer.title}">
-                    </h2>
-                    <img th:src="'data:image/png;base64, '+${offer.photo}" />
-                    <p> Nombre de couchages: <span th:text= "${offer.beds}"></span></p>
-                    <p> Taille: <span th:text= "${offer.surface}"></span>m²</p>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <p  class="lead" th:text="${offer.location}"> </p>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <form th:action="@{'/offers/'+${offer.id}}" th:object="${offer}" method="get">
-                                <button type="submit" class="btn btn-success col-md-6">Description</button>
-                            </form>
-                            <form th:action="@{'/offers/'+${offer.id}}" th:object="${offer}" method="post">
-                                <button type="submit" class="btn btn-danger col-md-6">Supprimer</button>
-                            </form>
-                        </div>
+    <header class="masthead" style="background-image: url('./static/img/home-bg.jpg')">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="site-heading">
+                        <h1>Clean Blog</h1>
+                        <span class="subheading">A Blog Theme by Start Bootstrap</span>
                     </div>
                 </div>
             </div>
         </div>
-        <td Id : ></td>
-        <td ></td>
-        <td ></td>
-    </tr>
+    </header>
 
-
-
-
-
-
-
-
-
-</table>
-
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <table>
+                    <tr th:each="offer : ${data}">
+                        <div class="item col-xs-4 col-lg-4 post-preview">
+                            <div class="thumbnail card">
+                                <!--<div class="img-event">
+                                    <img class="group list-group-image img-fluid" src="http://placehold.it/400x250/000/fff" alt="" />
+                                </div>-->
+                                <div class="caption card-body">
+                                    <a th:href="@{'/offers/'+${offer.id}}" th:object="${offer}" method="get">
+                                        <h2 class="group card-title inner list-group-item-heading post-title" th:text="${offer.title}">
+                                        </h2>
+                                        <h3 class="post-subtitle">
+                                            <img th:src="'data:image/png;base64, '+${offer.photo}" />
+                                            <p> Nombre de couchages: <span th:text= "${offer.beds}"></span></p>
+                                            <p> Taille: <span th:text= "${offer.surface}"></span>m²</p>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-md-6">
+                                                    <p  class="lead" th:text="${offer.location}"> </p>
+                                                </div>
+                                                <div class="col-xs-12 col-md-6">
+                                                    <form th:action="@{'/offers/'+${offer.id}}" th:object="${offer}" method="post">
+                                                        <button type="submit" class="btn btn-danger col-md-6">Supprimer</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </h3>
+                                        <!--<button type="submit" class="btn btn-success col-md-6">Description</button>-->
+                                    </a>
+                                    <p class="post-meta">Posted by
+                                        <a th:href="@{/user}" th:object="${offer}" method="get">Admin</a>
+                                    on September 24, 2018</p>
+                                </div>
+                            </div>
+                        </div>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
 <!-- jQuery -->
 <script src="../js/jquery-3.1.1.min.js"></script>
 

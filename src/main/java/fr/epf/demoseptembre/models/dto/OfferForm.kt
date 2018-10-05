@@ -18,5 +18,4 @@ data class OfferForm(var title: String? = null, var location: String?= null, var
         val base64 = Base64.getEncoder().encodeToString(byteArr)
         return base64
     }
-
 }
