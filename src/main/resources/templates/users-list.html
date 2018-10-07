@@ -27,14 +27,17 @@
 
     <table class="table table-hover group table-striped">
   <tr>
-    <td class="bg-danger">id</td>
-    <td class="bg-danger">firstName</td>
-    <td class="bg-danger">lastName</td>
+    <td class="bg-danger">identifiant</td>
+    <td class="bg-danger">Prénom</td>
+    <td class="bg-danger">Nom</td>
+      <td class="bg-danger"></td>
+
   </tr>
   <tr th:each="user : ${data}">
-    <td th:text="${user.id}"></td>
-    <td th:text="${user.firstName}"></td>
-    <td th:text="${user.lastName}"></td>
+      <td th:text="${user.id}"></td>
+      <td th:text="${user.firstName}"></td>
+      <td th:text="${user.lastName}"></td>
+      <td><a th:href="@{'/user/'+${user.id}}" th:object="${user}" method="get">Voir profil</a></td>
   </tr>
 
 
