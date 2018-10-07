@@ -91,10 +91,13 @@ public class UsersController {
         return "test";  
     }
 
-    @GetMapping("/user")
-    public String getUser(Model model){
-        return "user_info";
-    }
+    @RequestMapping(value ="user/{id}", method = RequestMethod.GET)
+    public String showUser(@PathVariable("id") int itemId, Model model) {
+            User user = userDao.findById(itemId).get();
+            model.addAttribute("user",user);
+            return "user_info";
+        }
+
 
     @RequestMapping(value = "offers/{id}", method = RequestMethod.POST)
     public String delete(@PathVariable("id") int itemId, Model model) {
