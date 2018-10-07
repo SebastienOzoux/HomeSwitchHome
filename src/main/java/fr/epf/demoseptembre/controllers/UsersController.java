@@ -109,4 +109,5 @@ public class UsersController {
         model.addAttribute("offer",offer);
         return "offer";
     }
+
 }
