@@ -26,20 +26,6 @@
 </head>
 <body>
 <div style="margin-top:50px; display:block" id="page" layout:fragment="content">
-    <header class="masthead" style="background-image: url('./static/img/home-bg.jpg')">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-10 mx-auto">
-                    <div class="site-heading">
-                        <h1>Clean Blog</h1>
-                        <span class="subheading">A Blog Theme by Start Bootstrap</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
@@ -50,10 +36,9 @@
                                 <!--<div class="img-event">
                                     <img class="group list-group-image img-fluid" src="http://placehold.it/400x250/000/fff" alt="" />
                                 </div>-->
-                                <div class="caption card-body">
+                                <div class="caption card-body bg-secondary">
                                     <a th:href="@{'/offers/'+${offer.id}}" th:object="${offer}" method="get">
-                                        <h2 class="group card-title inner list-group-item-heading post-title" th:text="${offer.title}">
-                                        </h2>
+                                        <h2 class="group card-title inner list-group-item-heading post-title" th:text="${offer.title}"></h2>
                                         <h3 class="post-subtitle">
                                             <img th:src="'data:image/png;base64, '+${offer.photo}" />
                                             <p> Nombre de couchages: <span th:text= "${offer.beds}"></span></p>
@@ -62,18 +47,17 @@
                                                 <div class="col-xs-12 col-md-6">
                                                     <p  class="lead" th:text="${offer.location}"> </p>
                                                 </div>
-                                                <div class="col-xs-12 col-md-6">
-                                                    <form th:action="@{'/offers/'+${offer.id}}" th:object="${offer}" method="post">
-                                                        <button type="submit" class="btn btn-danger col-md-6">Supprimer</button>
-                                                    </form>
-                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <form th:action="@{'/offers/'+${offer.id}}" th:object="${offer}" method="post">
+                                                    <button type="submit" class="btn btn-danger">Supprimer</button>
+                                                </form>
                                             </div>
                                         </h3>
-                                        <!--<button type="submit" class="btn btn-success col-md-6">Description</button>-->
+                                        <p class="post-meta">Posted by
+                                            <a th:href="@{/user}" th:object="${offer}" method="get">Admin</a>
+                                            on September 24, 2018</p>
                                     </a>
-                                    <p class="post-meta">Posted by
-                                        <a th:href="@{/user}" th:object="${offer}" method="get">Admin</a>
-                                    on September 24, 2018</p>
                                 </div>
                             </div>
                         </div>
