@@ -15,28 +15,31 @@
         type="text/css">
 </head>
 <body>
-<table>
-  
+
+<div>
+  <form method="get" action="/adduser">
+    <button type="submit" class="btn btn-lg btn-primary">Ajouter utilisateur</button>
+  </form>
+
+</div>
+
+  <div class="card-body text-left">
+
+    <table class="table table-hover group table-striped">
   <tr>
-    <th>
-      id
-    </th>
-    <th>firstName</th>
-    <th>lastName</th>
+    <td class="bg-danger">id</td>
+    <td class="bg-danger">firstName</td>
+    <td class="bg-danger">lastName</td>
   </tr>
   <tr th:each="user : ${data}">
     <td th:text="${user.id}"></td>
     <td th:text="${user.firstName}"></td>
     <td th:text="${user.lastName}"></td>
   </tr>
-  <div>
-    <form method="get" action="/user">
-      <button type="submit" class="btn btn-lg btn-primary">Ajouter utilisateur</button>
-    </form>
 
+
+    </table>
   </div>
-
-</table>
 
 <!-- jQuery -->
 <script src="../js/jquery-3.1.1.min.js"></script>
