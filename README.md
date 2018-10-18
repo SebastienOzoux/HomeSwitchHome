@@ -1,18 +1,4 @@
-Bienvenue sur notre projet !!
+# Bienvenue sur HomeSwitcHome
+Le but de cette plateforme est de permettre à des particuliers d'échanger leurs maisons entre eux !
 
-    <!-- Inclure le header/footer -->
-    <script src="jquery.js"></script>
-    <script>
-    $(function(){
-      $("#Header").load("header.html");
-      $("#Footer").load("footer.html");
-    });
-    </script>
-    
-    
-    
-    
-    
-    <header>
-    <div id="Header"></div>
-    </header>
+Ce projet a été réalisé par Pierre Pinatel, Théo Sicard et Sébastien Ozoux
