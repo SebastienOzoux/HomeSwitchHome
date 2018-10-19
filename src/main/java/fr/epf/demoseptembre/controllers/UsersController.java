@@ -40,6 +40,12 @@ public class UsersController {
      * @param model le modèle
      * @return
      */
+
+    @RequestMapping({"/"})
+    public String index() {
+        return "index";
+    }
+
     @GetMapping("/users")
     public String getUsers(Model model) {
         model.addAttribute("data", userDao.findAll());
@@ -85,11 +91,6 @@ public class UsersController {
         return "announce-list";
     }
 
-    @GetMapping("/test")
-    public String gettest(Model model) {
-        model.addAttribute("data", userDao.findAll());
-        return "test";  
-    }
 
     @RequestMapping(value ="user/{id}", method = RequestMethod.GET)
     public String showUser(@PathVariable("id") int itemId, Model model) {
