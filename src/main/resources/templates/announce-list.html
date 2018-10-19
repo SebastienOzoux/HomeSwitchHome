@@ -43,7 +43,7 @@
                                     <a th:href="@{'/offers/'+${offer.id}}" th:object="${offer}" method="get">
                                         <h2 class="group card-title inner list-group-item-heading post-title" th:text="${offer.title}"></h2>
                                         <h3 class="post-subtitle">
-                                            <img th:src="'data:image/png;base64, '+${offer.photo}" />
+                                            <img th:src="${offer.photo != null} ? 'data:image/png;base64, ' +${offer.photo} : @{../img/logo_takima_horizontal_inverted.png}" height="200" width="200"/>
                                             <p> Nombre de couchages: <span th:text= "${offer.beds}"></span></p>
                                             <p> Taille: <span th:text= "${offer.surface}"></span>m²</p>
                                             <div class="row">
