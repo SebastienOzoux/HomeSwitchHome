@@ -1,7 +1,7 @@
 # Bienvenue sur HomeSwitcHome
 Le but de cette plateforme est de permettre à des particuliers d'échanger leurs maisons entre eux !
 
-Pour accéder à la plateforme, rendez-vous sur `http://localhost:8080/index.html` .
+Pour accéder à la plateforme, rendez-vous sur `http://localhost:8080/` .
 Pour pouvoir accéder à toutes les fonctionnalités, dans le fichier application.properties, remplacez la ligne suivante
 
     spring.jpa.hibernate.ddl-auto=create
